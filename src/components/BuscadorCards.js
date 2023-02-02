@@ -20,8 +20,6 @@ import {
 } from '@tremor/react';
 
 
-
-
 import {
     ArrowTrendingUpIcon,
     ArrowTrendingDownIcon,
@@ -31,18 +29,10 @@ import {
 
 
 import { useState } from 'react';
-import colombia from '../data/colombia.json';
 import indicadores from '../data/indicadores.json';
-// import data_indicadores from '../data/data_indicadores.json';
-import cucuta from '../data/cucuta.json';
-import norte from '../data/norte.json';
 import final from '../data/final.json'
 import React, {createContext, useContext} from 'react'
-// import {getLinearData} from './LinearGraph';
-import LinearGraph from './LinearGraph';
 import linear_data from '../data/linear_data.json';
-
-
 
 
 const colors = {
@@ -492,58 +482,65 @@ export const getLinearData = (selectedTerm) => {
     console.log("DESDE LINEAR, GET LINEAR DATA")
     console.log(selectedTerm)
 
+    console.log("Linear data:")
+    console.log(linear_data)
+
+    console.log("linear_data_filtered:")
+    console.log(linear_data_filtered)
+
     // filter data by selected term
     // const linear_data_filtered = linear_data.filter((item) => item.term === selectedTerm)
 
     var linear_data_filtered = linear_data[selectedTerm]
 
-    for (const i of linear_data_filtered) {
+    // Check if linear_data_filtered is null
+    if (linear_data_filtered == null){
+        DataForLinear.Data = [{}];
+    }
 
-        i.fecha = new Date(i.fecha_cuc)
+    else {
 
-        // Extract year from date
 
-        // Extraer año de la fecha
-        const a = new Date(i.fecha_cuc).getFullYear();
-        i.year = a;
+        for (const i of linear_data_filtered) {
 
+            i.fecha = new Date(i.fecha_cuc)
+    
+            // Extract year from date
+    
+            // Extraer año de la fecha
+            const a = new Date(i.fecha_cuc).getFullYear();
+            i.year = a;
+    
+            
+            }
+            
+    
+        console.log("DESDE LINEAR, LINEAR DATA FILTERED LENGTH")
+        console.log(linear_data_filtered.length)
+    
+        console.log("DESDE LINEAR, LINEAR DATA FILTERED")
+        console.log(linear_data_filtered)
+    
         
-        }
+    
+        DataForLinear.Data = linear_data_filtered;
+    
         
+        console.log("DataforLinear.Data")
+        console.log(DataForLinear.Data)
+    
+        // Getting data for bar chart
+        var data = DataFromTermContext.Variable[0];
+    
+        console.log("DataFromTermContext.Variable[0]")
+        console.log(DataFromTermContext.Variable[0])
 
-    console.log("DESDE LINEAR, LINEAR DATA FILTERED LENGTH")
-    console.log(linear_data_filtered.length)
 
-    console.log("DESDE LINEAR, LINEAR DATA FILTERED")
-    console.log(linear_data_filtered)
+    }
+
 
     
-
-    DataForLinear.Data = linear_data_filtered;
-
     
-    console.log("DataforLinear.Data")
-    console.log(DataForLinear.Data)
-
-    // Getting data for bar chart
-
-    var data = DataFromTermContext.Variable[0];
-
-    console.log("DataFromTermContext.Variable[0]")
-    console.log(DataFromTermContext.Variable[0])
-
-    
-
-    // const bar_data = linear_data_filtered.map((item) => {
-    //     return {
-    //         "fecha": item.fecha,
-    //         "metric": item.metric
-    //     }
-    // })
-    
-    
-
-
 }
 
 

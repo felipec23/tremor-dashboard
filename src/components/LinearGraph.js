@@ -68,10 +68,16 @@ export const getLinearData = (selectedTerm) => {
     console.log("DESDE LINEAR, GET LINEAR DATA")
     console.log(selectedTerm)
 
+    console.log("Linear data:")
+    console.log(linear_data)
+
     // filter data by selected term
     // const linear_data_filtered = linear_data.filter((item) => item.term === selectedTerm)
 
     var linear_data_filtered = linear_data[selectedTerm]
+
+    console.log("Linear data filtered:")
+    console.log(linear_data_filtered)
 
     for (const i of linear_data_filtered) {
 
