@@ -705,7 +705,7 @@ export default function BuscadorCards() {
                                         colors={["blue", "red", "green"]}
                                         // valueFormatter={dataFormatter}  
                                         marginTop="mt-6"         
-                                        // yAxisWidth="w-20"
+                                        yAxisWidth="w-10"
                                     />
                             </Card>
                     {/* </Block> */}
@@ -725,7 +725,7 @@ export default function BuscadorCards() {
                         colors={["blue", "red", "green"]}
                         // valueFormatter={dataFormatter}
                         marginTop="mt-6"
-                        yAxisWidth="w-12"
+                        yAxisWidth="w-10"
                     />
                 </Card>
 
