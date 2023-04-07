@@ -1,3 +1,11 @@
+# Dashboard for Cúcuta
+
+Cúcuta is a Colombian city, next to Venezuela. This dashboard shows some economic and social metrics. The idea is to explore them and compare each number with the state and country performance, so one can understand how good/bad the city is in comparison with the country.
+
+TODO: Add a predefined dashboard (report) that shows the weakest and strongest areas of the city.
+
+The dashboard is deployed in Vercel and can be found here: https://cucuta-pi.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
