@@ -10,14 +10,8 @@ import {
 } from '@tremor/react';
 
 import { useState } from 'react';
-import SummaryCard from './SummaryCard';
-import Buscador from './Buscador';
 import BuscadorCards from './BuscadorCards';
-import LinearGraph from './LinearGraph';
-
-import React, {createContext, useContext} from 'react'
-
-
+import React from 'react'
 
 export default function Dashboard() {
     const [selectedView, setSelectedView] = useState(1);
@@ -41,13 +35,7 @@ export default function Dashboard() {
             { selectedView === 1 ? (
                 <>
                     <Text marginTop="mt-6">Escribe y selecciona cualquier indicador que desees explorar:</Text>
-                    {/* <Buscador />
-                    <SummaryCard />  */}
-
-
                     <BuscadorCards />
-
-
 
                 </>
             ) : (

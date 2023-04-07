@@ -4,7 +4,6 @@ import Dashboard from './components/Dashboard';
 import SummaryCard from './components/SummaryCard';
 
 function App() {
-  console.log("jejej")
   return (
     <>
       <Dashboard/>

@@ -49,56 +49,7 @@ const icons = {
     Incremento: ArrowTrendingUpIcon,
     Decremento: ArrowTrendingDownIcon,
 }
-
-const categories = [
-    {
-        title: 'Sales',
-        metric: '$ 12,699',
-        metricPrev: '$ 9,456',
-        delta: '34.3%',
-        deltaType: 'moderateIncrease',
-    },
-    {
-        title: 'Profit',
-        metric: '$ 40,598',
-        metricPrev: '$ 45,564',
-        delta: '10.9%',
-        deltaType: 'moderateDecrease',
-    },
-    {
-        title: 'Customers',
-        metric: '1,072',
-        metricPrev: '856',
-        delta: '25.3%',
-        deltaType: 'moderateIncrease',
-    },
-];
-
 // Create function to read data from json file
-
-
-
-// console.log(myData)
-console.log("FINAL:")
-console.log(final)
-
-
-
-
-
-// console.log("indicadores LOOP:")
-// console.log(indicadores)
-
-// Print each element in the array
-
-// indicadores.forEach((item) => console.log(item.title));
-
-
-// Create a select box item for each entry in categories select 
-
-// indicadores.forEach(function(entry) {
-//     console.log(entry);
-//   });
 
 
 // Create custom context to store selected term
@@ -544,21 +495,6 @@ export const getLinearData = (selectedTerm) => {
 }
 
 
-
-// try {
-//     getLinearData(selectedTerm);
-// }
-
-// catch (error) {
-//     console.log("First time loading the page")
-//     console.log("Error: " + error)
-//     getLinearData("Índice de pobreza multidimensional - IPM");
-// }
-
-
-// 
-
-
 console.log("DataforLinear.Provider afuera")
 console.log(DataForLinear.Data)
 
@@ -611,23 +547,6 @@ export default function BuscadorCards() {
             
 
             </SelectBox>
-
-            {/* Write h1 with selected term */}
-            {/* IMPORTANTE: aqui para imprimir lo que hay */}
-            {/* <h1>{selectedTerm}</h1> */}
-            {/* <h1>{JSON.stringify(DataFromTermContext.Provider[0], null, 2)}</h1> */}
-
-            
-            {/* <Flex alignItems="align-top" spaceX="space-x-6" marginTop="mt-8">
-
-                <Title>Resumen de la variable en Cúcuta</Title> 
-                <Icon
-                    icon={IdentificationIcon}
-                    variant="solid"
-                    tooltip="Tooltip to place context information"
-                />
-
-            </Flex> */}
 
             <Title marginTop="mt-8">Resumen de la variable en Cúcuta</Title> 
             <Text>En estas tarjetas se muestra el último dato registrado, el mínimo y el máximo histórico para Cúcuta.</Text>
@@ -714,10 +633,7 @@ export default function BuscadorCards() {
                 
                 <Card>
                     <Title>Comparación de promedios</Title>
-                    {/* <Subtitle>
-                    The IUCN Red List has assessed only a small share of the total known
-                    species in the world.
-                    </Subtitle> */}
+
                     <BarChart
                         data={DataFromTermContext.Promedios}
                         dataKey="promedio"
